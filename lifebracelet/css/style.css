@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fff;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../img/elderly1.jpg') center bottom/cover no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.6);
+}
+
+/* NAVBAR estilo igual que los otros */
+.menu_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    position: relative;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.menu_icono {
+    width: 30px;
+    cursor: pointer;
+    display: none;
+}
+
+.navbar ul {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar ul li a {
+    color: #fff;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a.active {
+    color: #f4a261;
+}
+
+#menu {
+    display: none;
+}
+
+/* HEADER TEXT */
+.header-content {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.header-content h1 {
+    font-size: 56px;
+    margin-bottom: 15px;
+    animation: fadeInDown 1s ease;
+}
+
+.header-content p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+    animation: fadeInUp 1s ease;
+}
+
+.btn {
+    background-color: #f4a261;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 8px;
+    margin-top: 30px;
+    display: inline-block;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #e76f51;
+    transform: translateY(-2px);
+}
+
+/* SECTION: SERVICES */
+.services {
+    padding: 80px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.services-group {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.service {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 30%;
+}
+
+.service:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+/* SECTION: GENERAL */
+.general {
+    padding: 80px 20px;
+    background-color: #e76f51;
+    color: #fff;
+    text-align: center;
+}
+
+/* SECTION: BLOG */
+.blog {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.blog h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.blog-content {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.blog-post {
+    width: 30%;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.blog-post:hover {
+    transform: scale(1.03);
+}
+
+.intro {
+    text-align: center;
+    padding: 100px 20px;
+    color: #fff;
+}
+
+.tecti {
+    color: #fff;
+}
+
+/* ANIMACIONES */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        background: rgba(0,0,0,0.85);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 20px;
+        display: none;
+    }
+
+    #menu:checked + label + .navbar ul {
+        display: flex;
+    }
+
+    .menu_icono {
+        display: block;
+    }
+
+    .services-group,
+    .blog-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service,
+    .blog-post {
+        width: 80%;
+    }
+
+    .header-content h1 {
+        font-size: 36px;
+    }
+}

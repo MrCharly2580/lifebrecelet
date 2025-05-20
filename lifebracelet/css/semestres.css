@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
+
+body {
+    background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header {
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(142, 150, 255, 0.938)), url('../img/elderly1.jpg') center bottom/cover no-repeat;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.menu_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 800;
+    color: #fff;
+}
+
+.menu_icono {
+    width: 25px;
+    cursor: pointer;
+    display: none;
+}
+
+/* Navbar styles */
+.navbar ul {
+    display: flex;
+}
+
+.navbar ul li a {
+    color: #fff;
+    padding: 20px;
+    font-weight: 600;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a.active {
+    color: #ffd700;
+}
+
+/* Responsive menu */
+@media (max-width: 768px) {
+    .menu_icono {
+        display: block;
+    }
+    #menu {
+        display: none;
+    }
+    nav.navbar {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0,0,0,0.9);
+        flex-direction: column;
+        display: none;
+        padding: 10px 0;
+    }
+    #menu:checked + label + nav.navbar {
+        display: flex;
+    }
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    .navbar ul li {
+        width: 100%;
+        text-align: center;
+    }
+    .navbar ul li a {
+        padding: 15px 0;
+    }
+}
+
+/* Header content */
+.header_content {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.header_content h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.header_content p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.4;
+}
+
+/* Main content - Semestre options */
+.main-content {
+    margin: 50px auto;
+    text-align: center;
+}
+
+.semestres-options {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.semestre-card {
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
+    padding: 40px 60px;
+    border-radius: 12px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+}
+
+.semestre-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgb(0 0 0 / 0.15);
+    color: #007BFF;
+}
